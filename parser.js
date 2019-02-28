@@ -14,13 +14,14 @@ const parseData = (data, resolve, reject) => {
     const lines = data.split('\n')
     lines.pop() // remove last empty element
 
-    const numberOfPictures = Number(lines.shift());
+    const numberOfPictures = Number(lines.shift())
     
     if(numberOfPictures === lines.length) {
-        const pictures = lines.map(line => {
-            const [ orientation, numberOfTags, ...tags] = line.split(' ');
+        const pictures = lines.map((line, id) => {
+            const [ orientation, numberOfTags, ...tags] = line.split(' ')
 
             return {
+                id,
                 orientation,
                 tags
             }

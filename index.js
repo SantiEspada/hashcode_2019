@@ -4,9 +4,9 @@ const INPUT_FILE = './dataset/a_example.txt'
 
 const main = async () => {
     try {
-        const data = await parseFile(INPUT_FILE);
+        const data = await parseFile(INPUT_FILE)
 
-        console.log(data);
+        console.log(data)
     } catch(error) {
         console.error(error)
     }
