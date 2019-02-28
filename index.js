@@ -29,6 +29,8 @@ const main = async () => {
         const horizontalPics = []
         const verticalPics = []
 
+        console.log('File parsed!')
+
         pictures.forEach(pic => {
             if(pic.orientation === 'V') {
                 verticalPics.push(pic)
@@ -57,6 +59,7 @@ const main = async () => {
             if(bestMatch) {
                 matchedVerticalPics.add(pic.id)
                 matchedVerticalPics.add(bestMatch)
+                console.log(`${matchedVerticalPics.size} vertical pictures matched out of ${verticalPics.length}`)
                 verticalPicsGroups.push([pic.id, bestMatch])
             }
         })
@@ -88,6 +91,7 @@ const main = async () => {
         const matchedSlides = new Set();
 
         let currentSlide = slides[0];
+        console.log('Matching slides...');
 
         while(orderedSlides.length < slides.length) {
             let bestScore = 0;
