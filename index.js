@@ -107,6 +107,7 @@ const main = async () => {
                 matchedSlides.add(currentSlide.id)
                 matchedSlides.add(bestMatch)
                 orderedSlides.push(currentSlide, slides[bestMatch])
+                console.log(`${orderedSlides.length} slides of ${slides.length}`)
                 currentSlide = slides[bestMatch]
             }
         }
